@@ -7,6 +7,7 @@ import { paginationHelper } from "../../../Helpers/paginationHelper";
 import { IFile } from "../../Interfaces/file";
 import { Request, Response } from "express";
 import { IAuthUser } from "../../Interfaces/common";
+import { userSearchAbleFields } from "./user.constant";
 
 const createAdmin = async (req: Request): Promise<Admin> => {
   const file = req.file as IFile;

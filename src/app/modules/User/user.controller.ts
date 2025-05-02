@@ -5,6 +5,7 @@ import sendResponse from "../../../shared/sendResponse";
 import httpStatus from 'http-status';
 import pick from "../../../shared/pick";
 import { IAuthUser } from "../../Interfaces/common";
+import { userFilterableFields } from "./user.constant";
 
 const createAdmin = catchAsync(async (req: Request, res: Response) => {
   const result = await userService.createAdmin(req);
