@@ -1,9 +1,9 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { AdminController } from './admin.controller';
 import validateRequest from '../../middlewares/validateRequest';
-import { adminValidationSchemas } from './admin.validations';
+import { UserRole } from '../../../../generated/prisma';
+import { adminValidationSchemas } from './admin.validation';
 import auth from '../../middlewares/auth';
-import { UserRole } from '@prisma/client';
 
 const router = express.Router();
 

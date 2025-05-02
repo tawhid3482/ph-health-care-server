@@ -1,7 +1,9 @@
-import { Admin, Prisma, UserStatus } from "@prisma/client";
 import { adminSearchAbleFields } from "./admin.constant";
 import prisma from "../../../shared/prisma";
 import { paginationHelper } from "../../../Helpers/paginationHelper";
+import { Admin, Prisma, UserStatus } from "../../../../generated/prisma";
+import { IAdminFilterRequest } from "./admin.interface";
+import { IPaginationOptions } from "../../Interfaces/pagination";
 
 const getAllFromDB = async (params: IAdminFilterRequest, options: IPaginationOptions) => {
     const { page, limit, skip } = paginationHelper.calculatePagination(options);
