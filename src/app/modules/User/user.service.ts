@@ -1,4 +1,12 @@
 import bcrypt from "bcrypt";
+import { fileUploader } from "../../../Helpers/fileUploader";
+import { Admin, Doctor, Patient, Prisma, UserRole, UserStatus } from "../../../../generated/prisma";
+import prisma from "../../../shared/prisma";
+import { IPaginationOptions } from "../../Interfaces/pagination";
+import { paginationHelper } from "../../../Helpers/paginationHelper";
+import { IFile } from "../../Interfaces/file";
+import { Request, Response } from "express";
+import { IAuthUser } from "../../Interfaces/common";
 
 const createAdmin = async (req: Request): Promise<Admin> => {
   const file = req.file as IFile;

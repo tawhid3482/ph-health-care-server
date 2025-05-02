@@ -1,11 +1,17 @@
-import { Request, RequestHandler, Response } from "express";
+import { Request, Response } from "express";
+import catchAsync from "../../../shared/catchAsync";
+import { userService } from "./user.service";
+import sendResponse from "../../../shared/sendResponse";
+import httpStatus from 'http-status';
+import pick from "../../../shared/pick";
+import { IAuthUser } from "../../Interfaces/common";
 
 const createAdmin = catchAsync(async (req: Request, res: Response) => {
   const result = await userService.createAdmin(req);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Admin Created successfuly!",
+    message: "Admin Created successfully!",
     data: result,
   });
 });

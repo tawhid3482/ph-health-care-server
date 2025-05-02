@@ -6,6 +6,7 @@ dotenv.config({ path: path.join(process.cwd(), '.env') });
 export default {
     env: process.env.NODE_ENV,
     port: process.env.PORT,
+    cloudinary: process.env.CLOUDINARY_API_KEY,
     jwt: {
         jwt_secret: process.env.JWT_SECRET,
         expires_in: process.env.EXPIRES_IN,
@@ -26,6 +27,6 @@ export default {
         cancelUrl: process.env.CANCEL_URL,
         failUrl: process.env.FAIL_URL,
         sslPaymentApi: process.env.SSL_PAYMENT_API,
-        sslValidationApi: process.env.SSL_VALIDATIOIN_API
+        sslValidationApi: process.env.SSL_VALIDATIOIN_API,
     }
 }

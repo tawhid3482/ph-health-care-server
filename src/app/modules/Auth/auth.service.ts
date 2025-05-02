@@ -1,11 +1,12 @@
 import prisma from "../../../shared/prisma";
 import * as bcrypt from 'bcrypt'
 import { Secret } from "jsonwebtoken";
-import emailSender from "./emailSender";
 import httpStatus from "http-status";
 import { UserStatus } from "../../../../generated/prisma";
 import { jwtHelpers } from "../../../Helpers/jwtHelpers";
 import config from "../../../config";
+import emailSender from "./emailSender";
+import ApiError from "../../errors/ApiError";
 
 const loginUser = async (payload: {
     email: string,
