@@ -1,21 +1,4 @@
-import {
-  Admin,
-  Doctor,
-  Patient,
-  Prisma,
-  User,
-  UserRole,
-  UserStatus,
-} from "@prisma/client";
-import * as bcrypt from "bcrypt";
-import prisma from "../../../shared/prisma";
-import { fileUploader } from "../../../helpars/fileUploader";
-import { IFile } from "../../interfaces/file";
-import { Request } from "express";
-import { IPaginationOptions } from "../../interfaces/pagination";
-import { paginationHelper } from "../../../helpars/paginationHelper";
-import { userSearchAbleFields } from "./user.constant";
-import { IAuthUser } from "../../interfaces/common";
+import bcrypt from "bcrypt";
 
 const createAdmin = async (req: Request): Promise<Admin> => {
   const file = req.file as IFile;
