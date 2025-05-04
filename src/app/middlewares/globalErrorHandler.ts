@@ -1,6 +1,6 @@
-import { Prisma } from "../../../generated/prisma";
 import { NextFunction, Request, Response } from "express"
 import httpStatus from "http-status"
+import { Prisma } from "../../../generated/prisma";
 
 const globalErrorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
 
